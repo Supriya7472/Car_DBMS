@@ -22,7 +22,8 @@ public class DisplayAllCarsServlet extends HttpServlet{
 	    Connection conn=null;
 		try {
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/servlet_cardb?user=root&password=Supriya@104");
+		conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/servlet_cardb?user=root&password=root");
+					//provide details of your user id and password inside query parameter
 		PreparedStatement pst=conn.prepareStatement("Select * from car");
 		ResultSet rs=pst.executeQuery();
 		req.setAttribute("resultSet", rs);
